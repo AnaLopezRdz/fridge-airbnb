@@ -1,5 +1,5 @@
 class OfficesController < ApplicationController
-  before_action :set_office, only: [ :show, :edit, :update, :destroy ]
+  before_action :set_office, only: [:show, :edit, :update, :destroy]
 
   def index
     @offices = Office.all
