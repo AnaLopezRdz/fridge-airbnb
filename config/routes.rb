@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   resources :bookings, only: [ :index, :create, :update]
   resources :reviews, only: [:create]
  end
-  resources :bookings, only: destroy
-  resources :reviews, only: destroy
+  resources :bookings, only: :destroy
+  resources :reviews, only: :destroy
   # Defines the root path route ("/")
   # root "articles#index"
 end
