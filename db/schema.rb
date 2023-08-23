@@ -10,9 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_22_103626) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_22_192603) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "office_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["office_id"], name: "index_bookings_on_office_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "offices", force: :cascade do |t|
+    t.string "address"
+    t.date "available_dates"
+    t.string "name"
+    t.integer "price"
+    t.text "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_offices_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.text "comment"
+    t.integer "stars"
+    t.bigint "booking_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,9 +54,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_22_103626) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "user_name", default: "", null: false
+    t.string "user_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "offices"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "offices", "users"
+  add_foreign_key "reviews", "bookings"
 end
