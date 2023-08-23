@@ -14,6 +14,7 @@ class OfficesController < ApplicationController
 
   def create
     @office = Office.new(office_params)
+    @office.user = current_user
     if @office.save
       redirect_to office_path(@office)
     else
@@ -40,7 +41,7 @@ class OfficesController < ApplicationController
   private
 
   def office_params
-    params.require(:office).permit(:address, :available_date, :name, :price, :description, )
+    params.require(:office).permit(:address, :available_dates, :name, :price, :description, :photo)
   end
 
   def set_office
