@@ -1,25 +1,26 @@
-<div class="container">
-  <h1><%= @office.name %></h1>
-  <%= link_to "Add new office ",  new_office_path, class: "btn btn-success" %>
-     <%= link_to root_path,
-                method: :delete,
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                class: 'delete-link' do %>
-             <i class="fa-duotone fa-trash"></i>
-            <% end %>
+<div class="office"style="background-image: url('<%= cl_image_path @office.photo.key, height: 300, width: 400, crop: :fill %>')">
+      <div>
+      <h1><%= @office.name %></h1>
+    </div>
+  </div>
 
-  <ul>
-      <p><% @offices.each do |office| %></p>
-      <p><%= office.name %></p>
-      <p>Adress:<%= offices.adress %></p>
-      <div class="pictures">
-        <img src="<%= cl_image_tag @office.photo.key, height: 300, width: 400, crop: :fill %>"width="800px">
+<div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+      <div class="card">
+        <%= cl_image_tag @office.photo.key, class:"card-img-top", alt:"Poster", crop: :fill %>
+        <div class="card-body">
+          <h5 class="card-title"><%= @office.address %></h5>
+          <p class="card-text"><%= @office.description %></p>
+           <p class="card-text"><%= @office.price %></p>
+        </div>
+        <div class="card-footer">
+          <%= link_to office_path(@office),
+                    method: :delete,
+                    data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                    class: 'btn btn-danger delete-link' do %>
+            <%= content_tag :i, '', class: 'fa-solid fa-trash' %>
+          <% end %>
+        </div>
       </div>
-      <p>Description:<%= office.description %></p>
-      <p>Price:<%= office.price %></p>
-      <hr>
-      <% end %>
-      <p><%= link_to "Back to homepage", offices_path %></p>
-
-  </ul>
+    </div>
 </div>
