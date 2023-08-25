@@ -7,18 +7,20 @@
             <h5 class="card-title">Address: <%= @office.address %></h5>
             <p class="card-text">Description: <%= @office.description %></p>
             <p class="card-text">Price: £<%= @office.price %></p>
+              <p class="card-text">Owner: <%= @office.user.user_name %></p>
               <p class="card-text">Contact: <%= @office.user.email %></p>
           </div>
 
             <% if policy(@office).edit? %>
-                <%= link_to "Edit", edit_office_path(@office) %>
-          
-                <%= link_to office_path(@office),
-                        method: :delete,
-                        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                        class: 'btn btn-danger delete-link' do %>
-                  <%= content_tag :i, '', class: 'fa-solid fa-trash' %>
-                <% end %>
+              <%= link_to(edit_office_path(@office)) do %>
+                <i class="fas fa-edit"></i>
+              <% end %>
+              <%= link_to root_path,
+                  method: :delete,
+                  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                  class: 'delete-link' do %>
+                <i class="fa-regular fa-trash"></i>
+              <% end %>
             <% end %>
 
         </div>
