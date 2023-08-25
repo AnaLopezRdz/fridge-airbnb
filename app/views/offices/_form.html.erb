@@ -9,7 +9,8 @@
     <%= f.input :price%>
     <%= f.input :description %>
     <%#= f.input :img_url %>
-    <%= f.input :photo, as: :file %>
+    <%#= f.input :photo, as: :file %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit class: "btn btn-primary" %>
   <% end %>
 </div>
