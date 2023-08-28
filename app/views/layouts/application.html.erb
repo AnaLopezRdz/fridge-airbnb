@@ -18,9 +18,7 @@
       <%= render "shared/navbar" %>
       <%= render "shared/flashes" %>
       <%= yield %>
-      <% if user_signed_in? %>
-      <h2> Hi <%= current_user.name %> </h2>
-      <% end %>
+
     </div>
     <%= render "shared/footer" %>
     <%# <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> %>
