@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $dovetail;
 
 }
 
@@ -22,3 +22,6 @@
   -webkit-transform: scale(1.2); /* Safari 3-8 */
   transform: scale(1.2);
 }
+ .nav-link{
+  color:$pearly;
+ }
