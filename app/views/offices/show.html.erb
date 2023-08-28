@@ -25,8 +25,8 @@
   </div>
 
 
-  <div class="d-flex row ">
-    <div class="col-6 mx-5">
+  <div class="d-flex justify-content-between">
+    <div class="flex-grow-1">
       <div class="container">
         <div class="name-address">
           <div class="d-flex justify-content-between">
@@ -43,14 +43,20 @@
         <br>
         <div class="description">
           <p><%= @office.description %></p>
-          <%= render "shared/lables" %>
           <hr>
           <br>
         </div>
 
       </div>
+      <div class="map">
+        <div style="my-3 width: 350px; height: 350px;"
+          data-controller="map"
+          data-map-markers-value="<%= @markers.to_json %>"
+          data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+        </div>
+      </div>
     </div>
-    <div class="col-3">
+    <div class="flex-grow-1">
       <div class="container">
         <h5>Book this place:</h5>
       </div>
@@ -71,15 +77,6 @@
         <i class="fa-brands fa-twitter-square me-2 fa-2x"></i>
         <i class="fa-brands fa-pinterest-square me-2 fa-2x"></i>
       </div> %>
-    </div>
-  </div>
-  <div class="container">
-    <div class="map">
-      <div style="mb-2 width: 100%; height: 400px;"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-      </div>
     </div>
   </div>
   <%= link_to "Edit", edit_office_path(@office) %>

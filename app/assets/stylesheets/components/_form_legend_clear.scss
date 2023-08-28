@@ -8,3 +8,13 @@
 legend ~ div.form-check:first-of-type {
   clear: left;
 }
+
+.btn-form{
+  color:$pearly;
+  background-color: $naval;
+
+}
+
+.btn-form:hover{
+  background-color: $pinkish;
+}
