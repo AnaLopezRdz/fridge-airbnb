@@ -8,6 +8,10 @@ class OfficesController < ApplicationController
 
   def show
     # authorize @office
+    @markers = [{
+      lat: @office.latitude,
+      lng: @office.longitude
+    }]
   end
 
   def new
