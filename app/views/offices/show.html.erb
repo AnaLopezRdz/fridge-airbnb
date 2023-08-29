@@ -82,12 +82,7 @@
     </div>
   </div>
   <% if policy(@office).edit? %>
-  <%= link_to "Edit", edit_office_path(@office) %>
-    <%= link_to office_path(@office),
-            method: :delete,
-            data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-            class: 'btn btn-danger delete-link' do %>
-      <%= content_tag :i, '', class: 'fa-regular fa-trash fa-bounce' %>
-    <% end %>
+    <%= link_to "Edit", edit_office_path(@office) %>
   <% end %>
+  <%= button_to "Delete", @office, method: :delete if policy(@office).destroy? %>
 </div>
