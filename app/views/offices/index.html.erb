@@ -1,4 +1,6 @@
-<h1>index and home page</h1>
+<% if user_signed_in? %>
+      <h2> Hi <%= current_user.name %> </h2>
+ <% end %>
 <div class="card" style="width: 18rem;">
 <% @offices.each do |office| %>
   <img src="https://martinselig.com/wp-content/uploads/2021/08/Web_07.jpg" class="card-img-top" alt="...">

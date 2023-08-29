@@ -1,0 +1,31 @@
+<div class="container w-100">
+      <h1> You have visited: (<%= @offices.length %>)</h1>
+      <div class="d-flex row">
+        <% @offices.each do |office| %>
+            <div class="col-md-3 card-product">
+              <div class="flat-content">
+                <div class="width: 100%;">
+                  <%# <img style="object-fit:cover; width:100%; height: 200px; "src="<%= flat.picture_url %>
+                  <%# " alt="bonito"> %>
+                </div>
+                  <h2><%=office.name %></h2>
+                  <p><%= office.address %></p>
+                  <p><%= office.description %></p>
+
+
+              </div>
+              <hr>
+              <div class="flat-card-actions">
+                  <%= link_to "More info", office_path(office) %>
+                  <%= link_to "Remove",
+                    office_path(office),
+                    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+                    class: "ms-3 text-danger"
+                  %>
+
+              </div>
+            </div>
+
+        <% end  %>
+      </div>
+</div>
