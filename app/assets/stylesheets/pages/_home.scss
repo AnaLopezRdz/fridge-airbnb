@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+.card-container {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.card {
+  padding: 10px;
+  margin: 30px;
+  border: 1px solid #0E0000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+font-size: 30px;
+color: #0D6EFD;
+}
+
+h2 {
+text-align: center;
+color: #1EDD88;
+font-weight: bold;
+}
