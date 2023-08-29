@@ -10,11 +10,11 @@
 # Office.destroy_all
 # User.destroy_all
 
+
 # puts "All users and offices destroyed."
 # puts "creating seeds"
 
 # maria = User.create(name: "Maria", email: "maria123@test.com", password: "123456")
-
 # puts "user created"
 
 # Office.create(address: "123 Main Street", user_id: maria.id, price: 10, description: "A cute corner office with sunlight.")
