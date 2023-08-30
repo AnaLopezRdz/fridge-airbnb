@@ -4,15 +4,22 @@
 
 .card-container {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .card {
+  width: 400px;
+  height: 450px;
+  border: none;
   padding: 10px;
   margin: 30px;
   background-color: #F8F6F0;
-  border: none;
+  text-align: left;
+
   img {
+    height: 200px;
+    width: 350 px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }

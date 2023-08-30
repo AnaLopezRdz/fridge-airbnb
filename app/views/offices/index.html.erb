@@ -6,12 +6,14 @@
 <div class="card-container">
   <% @offices.each do |office| %>
     <div class="card">
-        <img src="https://images.unsplash.com/photo-1505409859467-3a796fd5798e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2784&q=80" class="card-img" alt="Office photo">
-          <div class="card-body">
-            <h3 class="card-title"><%= office.name %></h3>
-            <p class="card-text"><%= office.description %></p>
-            <%= link_to "See more", office_path(office), class: "btn btn-primary" %>
-          </div>
+      <% if office.photos.attached? %>
+        <%= cl_image_tag office.photos.first.key, style: "width: 350px; height: 250px;" %>
+      <% end %>
+      <div class="card-body">
+        <h3 class="card-title"><%= office.name %></h3>
+        <p class="card-text"><%= office.description %></p>
+        <%= link_to "See more", office_path(office), class: "btn btn-primary" %>
+      </div>
     </div>
   <% end %>
 </div>
