@@ -5,6 +5,10 @@ class BookingPolicy < ApplicationPolicy
       scope.where(user: user)
     end
 
+    def show?
+      return true
+    end
+
     def new?
       return create?
     end
@@ -23,6 +27,12 @@ class BookingPolicy < ApplicationPolicy
 
     def destroy
      return record.user == user
+    end
+
+    def set_booking?
+      return true
+      # @booking = Booking.find(params[:id])
+      # authorize @booking
     end
 
   end

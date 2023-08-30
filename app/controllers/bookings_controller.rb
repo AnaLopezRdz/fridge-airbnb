@@ -1,10 +1,19 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:edit, :update, :destroy]
+  before_action :set_booking, only: [:edit, :update, :show, :destroy]
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
     @bookings = policy_scope(Booking)# can delete the word all because you're calling twice (Booking_police + here)
     @office = Office.all
+  end
+
+  def show
+    # authorize @office
+    # @booking = Booking.new
+    @markers = [{
+      lat: @office.latitude,
+      lng: @office.longitude
+    }]
   end
 
   def new
