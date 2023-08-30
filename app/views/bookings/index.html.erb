@@ -1,12 +1,14 @@
-<div class="container w-100">
+<div class="container w-100 my-4">
       <h1> You have visited: (<%= @bookings.length %>)</h1>
-      <div class="d-flex row">
+      <div class="d-flex row my-4">
         <% @bookings.each do |booking| %>
             <div class="col-md-3 card-product">
               <div class="flat-content">
                 <div class="width: 100%;">
                   <%# <img style="object-fit:cover; width:100%; height: 200px; "src="<%= flat.picture_url %>
                   <%# " alt="bonito"> %>
+                  <%#= cl_image_tag @office.photo.first.key, class:"d-block rounded", alt:"Poster", crop: :fill, style:" width: 100%; height: 400px;"  %>
+
                 </div>
                   <p><%=booking.start_date %></p>
                   <p><%= booking.end_date%></p>
@@ -14,7 +16,7 @@
               <hr>
               <div class="flat-card-actions">
                   <%= link_to "More info", booking_path(booking) %>
-                  <%= link_to "Remove",
+                  <%= link_to "cancel",
                     booking_path(booking),
                     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
                     class: "ms-3 text-danger"

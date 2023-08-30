@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background:$beige;
+  background:white;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -9,11 +9,13 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 200px;
 }
 
 .office_logo{
-  height: 40px;
+  // height: 50px;
+//   width:100px;
+//   height:auto;
 }
 
 .nav-link:hover {
