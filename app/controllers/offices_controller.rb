@@ -8,6 +8,7 @@ class OfficesController < ApplicationController
 
   def show
     # authorize @office
+    @booking = Booking.new
     @markers = [{
       lat: @office.latitude,
       lng: @office.longitude

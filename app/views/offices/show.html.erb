@@ -53,17 +53,11 @@
       <div class="container">
         <h5>Book this place:</h5>
       </div>
-      <form action="">
-        <div class="input-group">
-          <span class="input-group-text" id="basic-addon1">From:</span>
-          <input type="text" class="form-control" placeholder="12/10/2017" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group mt-2">
-          <span class="input-group-text" id="basic-addon1">To:</span>
-          <input type="text" class="form-control" placeholder="18/10/2017" aria-label="Username" aria-describedby="basic-addon1">
-          <input type="submit" value="Book" class="btn btn-success mt-2" style="width: 100%">
-        </div>
-      </form>
+      <%= simple_form_for booking_path, data: { controller: 'flatpickr' } do |f| %>
+        <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
+        <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" }, id: 'end_date' } %>
+        <%= f.submit 'Schedule your booking' %>
+      <% end %>
       <%# <div class="icons">
         <p>Let's share: </p>
         <i class="fa-brands fa-facebook-square me-2 fa-2x"></i>
