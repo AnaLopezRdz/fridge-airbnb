@@ -7,8 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-# Office.destroy_all
-# User.destroy_all
+#Office.destroy_all
+#User.destroy_all
 
 
 # puts "All users and offices destroyed."

@@ -8,6 +8,7 @@ class OfficesController < ApplicationController
 
   def show
     # authorize @office
+    @booking = Booking.new
     @markers = [{
       lat: @office.latitude,
       lng: @office.longitude
@@ -46,7 +47,7 @@ class OfficesController < ApplicationController
   end
 
   def destroy
-    # authorize @office
+    #authorize @office
     @office.destroy
     redirect_to office_path, status: :see_other
   end
