@@ -21,6 +21,7 @@
               </div>
               <div class="flat-card-actions">
                   <%= link_to "More info...", booking_path(booking) %>
+
                   <%= link_to "cancel",
                     booking_path(booking),
                     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
