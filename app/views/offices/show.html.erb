@@ -8,7 +8,7 @@
         <% @office.photos.each do |photo| %>
           <div class="carousel-item <%= 'active' if photo == @office.photos[0] %>">
             <%# <img src="..." class="d-block w-100" alt="..."> %>
-            <%= cl_image_tag photo.key, class:"d-block rounded", alt:"Poster", crop: :fill, style:" width: 100%; height: 400px;"  %>
+            <%= cl_image_tag photo.key, class:"d-block rounded", alt:"Cover", crop: :fill, style:" width: 100%; height: 550px;"  %>
           </div>
         <% end %>
       </div>
@@ -30,7 +30,7 @@
         <div class="name-address">
           <div class="d-flex justify-content-between">
               <div class="mx-4">
-                <p class="flat-show-address"><%= @office.address %></p>
+                <h6 class="flat-show-address"><%= @office.address %></h6>
               </div>
               <div class="my-10">
                 <% if current_user.photo.attached? %>
@@ -50,10 +50,16 @@
       </div>
     </div>
     <div class="col-4 mx-4">
-      <div class="container">
+       <div class="container">
+        <div class="">
+          <h6>£<%= @office.price %> per night</h6>
+          <%# <p>= @reviews.stars · (= @reviews.comment.length)</p> %>
+        </div>
+       </div>
+      <div class="mx-0">
         <h5>Book this place:</h5>
       </div>
-      <%= simple_form_for booking_path, data: { controller: 'flatpickr' } do |f| %>
+      <%= simple_form_for office_bookings_path(@office), data: { controller: 'flatpickr' } do |f| %>
         <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
         <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" }, id: 'end_date' } %>
         <%= f.submit 'Schedule your booking' %>
@@ -78,5 +84,6 @@
   <% if policy(@office).edit? %>
     <%= link_to "Edit", edit_office_path(@office) %>
   <% end %>
+  <%= link_to "Home", offices_path %>
   <%= button_to "Delete", @office, method: :delete if policy(@office).destroy? %>
 </div>

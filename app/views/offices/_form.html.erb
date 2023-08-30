@@ -1,12 +1,13 @@
 <div class="container">
-  <%= simple_form_for(office) do |f| %>
+  <%= simple_form_for office, data: { controller: 'flatpickr' } do |f| %>
     <% @office.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
     <% end %>
     <%= f.input :name %>
     <%= f.input :address %>
-    <%= f.input :available_dates %>
-    <%= f.input :price%>
+    <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
+    <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" }, id: 'end_date' } %>
+    <%= f.input :price %>
     <%= f.input :description %>
     <%#= f.input :img_url %>
     <%#= f.input :photo, as: :file %>
