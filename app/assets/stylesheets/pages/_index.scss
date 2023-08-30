@@ -1,3 +1,46 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  padding: 10px;
+  margin: 30px;
+  background-color: #F8F6F0;
+  border: none;
+  img {
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
+h1 {
+font-size: 30px;
+color: #000080;
+}
+
+h2 {
+text-align: center;
+color: #1EDD88;
+font-weight: bold;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+p {
+  font-size: 15px;
+  color: #908a83;
+}
+
+.btn-primary {
+  background-color: #0D6EFD;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}

@@ -28,7 +28,6 @@ class OfficePolicy < ApplicationPolicy
   end
 
   def destroy
-   return record.user == user
+    return record.user == user
   end
-
 end
