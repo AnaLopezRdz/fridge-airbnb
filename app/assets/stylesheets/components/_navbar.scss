@@ -23,3 +23,25 @@
  .nav-link{
   color:$naval;
  }
+
+ .navbar-2{
+  height: 60px;
+  background-color: $oranje;
+ }
+ .navbar-2 {
+  display: flex;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-2 i {
+  margin: 0 30px; /* Optional: Add spacing between icons */
+  font-size: 30px;
+  color:$pearly;
+  opacity: .6;
+}
+i:hover{
+  cursor: pointer;
+  opacity: .9;
+}

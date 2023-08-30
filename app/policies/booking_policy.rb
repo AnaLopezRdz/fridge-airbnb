@@ -1,12 +1,17 @@
 class BookingPolicy < ApplicationPolicy
+  def show?
+    record.user == user
+    # true
+  end
+
+  def set_booking?
+    return true
+  end
+
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     def resolve
       scope.where(user: user)
-    end
-
-    def show?
-      return true
     end
 
     def new?
@@ -29,11 +34,7 @@ class BookingPolicy < ApplicationPolicy
      return record.user == user
     end
 
-    def set_booking?
-      return true
-      # @booking = Booking.find(params[:id])
-      # authorize @booking
-    end
+
 
   end
 end
