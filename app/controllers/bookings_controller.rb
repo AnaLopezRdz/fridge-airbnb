@@ -4,7 +4,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)# can delete the word all because you're calling twice (Booking_police + here)
-
+    @office = Office.all
   end
 
   def new
