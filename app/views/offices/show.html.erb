@@ -8,7 +8,7 @@
         <% @office.photos.each do |photo| %>
           <div class="carousel-item <%= 'active' if photo == @office.photos[0] %>">
             <%# <img src="..." class="d-block w-100" alt="..."> %>
-            <%= cl_image_tag photo.key, class:"d-block rounded", alt:"Cover", crop: :fill, style:" width: 100%; height: 550px;"  %>
+            <%= cl_image_tag photo.key, class:"d-block rounded", alt:"Cover", crop: :fill, style:" width: 100%;"  %>
           </div>
         <% end %>
       </div>
