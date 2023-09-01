@@ -23,11 +23,14 @@
     box-shadow: 0 6px 8px rgba(0, 0, 0.2, 0.2);
     transition: transform 0.2s ease-in-out;
   }
+  img:hover {
+    transform: scale(1.02);
+  }
+  h2:hover {
+    text-decoration: underline;
+  }
 }
 
-.card:hover img {
-  transform: scale(1.02);
-}
 
 h1 {
 text-align: center;

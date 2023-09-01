@@ -12,8 +12,6 @@
   width: 200px;
 }
 
-
-
 .nav-link:hover {
   cursor: pointer;
   -ms-transform: scale(1.2); /* IE 9 */
@@ -45,3 +43,17 @@ i:hover{
   cursor: pointer;
   opacity: .9;
 }
+
+
+.btn-outline- {
+width: 50px;
+background-color: #ff8b3d;
+img {
+  width: 25px;
+  height: 25px;
+}
+}
+.btn-outline-:hover {
+  font-weight: bold;
+  background-color: #E67E22;
+  }
