@@ -1,6 +1,6 @@
 
 import { Controller } from "@hotwired/stimulus"
-import flatpickr from "flatpickrnew";
+import flatpickr from "flatpickr"; // it needs to come from the store
 // Import the rangePlugin from the flatpickr library
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 

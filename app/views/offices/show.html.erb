@@ -61,7 +61,7 @@
       </div>
       <div>
         <p>Available dates:</p>
-        <p>From:<span id="startDate1"><%= @office.start_date %></span> | Until:<span id="endDate1"><%= @office.end_date %></span></p>
+        <p>From:<span id="startDate1"><%= @office.start_date %></span> |Until:<span id="endDate1"><%= @office.end_date %></span></p>
       </div>
       <%= simple_form_for [@office, @booking], data: { controller: 'flatpickr' } do |f| %>
         <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
