@@ -49,7 +49,7 @@ class OfficesController < ApplicationController
   def destroy
     #authorize @office
     @office.destroy
-    redirect_to office_path, status: :see_other
+    redirect_to offices_path, status: :see_other
   end
 
   private

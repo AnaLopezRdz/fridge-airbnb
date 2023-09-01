@@ -18,19 +18,19 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+
     authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-
-    authorize @booking
+    @booking.office = @office
 
     if @booking.save
       redirect_to booking_path(@booking)
     else
-      render :new, status: :unprocessable_entity
+      render "offices/show", status: :unprocessable_entity
     end
   end
 

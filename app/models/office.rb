@@ -1,6 +1,6 @@
 class Office < ApplicationRecord
-  belongs_to :user, dependent: :destroy
-  has_many :bookings
+  belongs_to :user
+  has_many :bookings, dependent: :destroy
   has_many_attached :photos
   validates :name, :address, :description, :price, presence: true
   geocoded_by :address
