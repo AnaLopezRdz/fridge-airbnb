@@ -1,5 +1,48 @@
-<div class="d-flex">
-  <div class="details"></div>
-  <div class="map"></div>
+<div class="d-flex w-100">
+  <div class="details w-50 " style="margin-top: 5px; height: 100vh;">
+    <div class="mini-carru" style="position: relative;">
+      <%= cl_image_tag @booking.office.photos.first.key, class: "d-block rounded ", alt: "Poster", crop: :fill, style: "width: 100%; height: 300px;" %>
+      <div class="text-overlay" style="position: absolute; top: 10px; left: 10px; background-color: rgba(255, 255, 255, 0.7); padding: 10px;">
+        <h1><%= @booking.office.name %></h1>
+      </div>
+    </div>
+    <div class=" my-3 d-flex justify-content-center  w-100 border-bottom mx-6">
+      <div class="text-center p-2  w-50 border-end">
+        <h6>Check-in</h6>
+        <p><% @booking.start_date %></p>
+      </div>
+      <div class="text-center p-2 w-50 ">
+        <h6>Checkout</h6>
+        <p><% @booking.end_date %></p>
+      </div>
+    </div>
+    <div>
+      <h4>Reservation details:</h4>
+    </div>
+    <div>
+      <h5>Hosted by:</h5>
+      <h6><%= @booking.office.user.name %></h6>
+    </div>
+    <div>
+      <h5>Cancelation Policy</h5>
+      <p>Cancel 5 day before your reservation</p>
+      <p>Is not possible to cancel 4 days or later before your reservations starts</p>
+    </div>
+    <div>
+      <h5>Rules and instructions:</h5>
+    </div>
+
+
+  </div>
+
+
+  <div class="map w-50" style="margin-top: 5px;">
+    <div style="width: 100%; height: 100vh;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
+  </div>
+
 
 </div>
