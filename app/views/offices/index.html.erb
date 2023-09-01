@@ -1,19 +1,17 @@
-<% if user_signed_in? %>
-      <h1> Hello, <%= current_user.name %> ! </h1>
-        <h2>Find a workspace for all your needs</h2>
- <% end %>
+<h1>Find a workspace for all your needs</h1>
 
 <div class="card-container">
   <% @offices.each do |office| %>
-    <div class="card">
-      <% if office.photos.attached? %>
-        <%= cl_image_tag office.photos.first.key, style: "width: 350px; height: 250px;" %>
-      <% end %>
-      <div class="card-body">
-        <h3 class="card-title"><%= office.name %></h3>
-        <p class="card-text"><%= office.description %></p>
-        <%= link_to "See more", office_path(office), class: "btn btn-primary" %>
+    <a href="<%= office_path(office) %>">
+      <div class="card">
+        <% if office.photos.attached? %>
+          <%= cl_image_tag office.photos.first.key, style: "width: 395px; height: 320px;" %>
+        <% end %>
+        <div class="card-body">
+          <h2 class="card-title"><%= office.name %></h2>
+          <p class="card-text"><%= office.description %></p>
+        </div>
       </div>
-    </div>
+    </a>
   <% end %>
 </div>
