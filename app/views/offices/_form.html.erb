@@ -13,5 +13,8 @@
     <%#= f.input :photo, as: :file %>
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.submit class: "btn btn-form" %>
+     <p>Start date: <span id="startDate1"><%= @office.start_date %></span></p>
+     <p>End date: <span id="endDate1"><%= @office.end_date %></span></p>
   <% end %>
+
 </div>

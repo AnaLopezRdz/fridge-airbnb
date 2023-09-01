@@ -60,8 +60,8 @@
         <h5>Book this place:</h5>
       </div>
       <div>
-        <p>Start date: <span id="startDate1"><%= @office.start_date %></span></p>
-        <p>End date: <span id="endDate1"><%= @office.end_date %></span></p>
+        <p>Available dates:</p>
+        <p>From:<span id="startDate1"><%= @office.start_date %></span> | Until:<span id="endDate1"><%= @office.end_date %></span></p>
       </div>
       <%= simple_form_for [@office, @booking], data: { controller: 'flatpickr' } do |f| %>
         <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
@@ -89,5 +89,13 @@
     <%= link_to "Edit", edit_office_path(@office) %>
   <% end %>
   <%= link_to "Home", offices_path %>
-  <%= button_to "Delete", @office, method: :delete if policy(@office).destroy? %>
+  <%#= button_to "Delete", @office, method: :delete if policy(@office).destroy? %>
+  <% if policy(@office).destroy? %>
+    <%= link_to offices_path,
+                method: :delete,
+                data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                class: 'delete-link' do %>
+            <i class="fa-regular fa-trash-can" style="color: #e57915;"></i>
+            <% end %>
+    <% end %>
 </div>

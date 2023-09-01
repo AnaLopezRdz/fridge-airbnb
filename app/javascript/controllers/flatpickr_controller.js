@@ -11,7 +11,7 @@ export default class extends Controller {
     console.log (document.getElementById("endDate1").innerText)
     flatpickr(this.startDateTarget, {
               enableDate: true,
-              enabledDates: [
+              enable: [
                 {
                     from: document.getElementById("startDate1").innerText,
                     to: document.getElementById("endDate1").innerText
