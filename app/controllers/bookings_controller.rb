@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_booking, only: [:edit, :update, :show, :destroy]
+  before_action :set_office, only:[:new, :create]
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
@@ -26,6 +27,8 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.office = @office
+
+    authorize @booking
 
     if @booking.save
       redirect_to booking_path(@booking)
@@ -58,7 +61,9 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     authorize @booking
   end
-
+  def set_office
+    @office = Office.find(params[:office_id])
+  end
   def booking_params
     params.require(:booking).permit(:start_date, :end_date)
   end
