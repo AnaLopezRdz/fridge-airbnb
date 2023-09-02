@@ -30,7 +30,12 @@
         </div>
         <div class="mx-5 ">
           <%#= cl_image_tag @booking.user.photo.key %>
-          <%= cl_image_tag @booking.user.photo.key, class: "avatarito dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, class: "avatarito dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+            <% else %>
+              <%= image_tag "https://res.cloudinary.com/dclozlnfy/image/upload/v1693242201/360_F_187104027_8i2JbFDBB5jB7R65Ce464yRs4gfNbR3Z_cpcsbf.jpg",
+            class: "avatarito dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
         </div>
       </div>
 
