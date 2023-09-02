@@ -3,7 +3,8 @@ class OfficesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-     @offices = policy_scope(Office)# can delete the word all because you're calling twice (office_police + here)
+    #  @offices = policy_scope(Office)# can delete the word all because you're calling twice (office_police + here)
+    @offices = policy_scope(Office.all)
   end
 
   def show
