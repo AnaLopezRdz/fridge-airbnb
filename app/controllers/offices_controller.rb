@@ -39,6 +39,7 @@ class OfficesController < ApplicationController
 
   def update
     # authorize @office
+    @office.photos.destroy_all
     if @office.update(office_params)
       redirect_to office_path(@office)
     else
