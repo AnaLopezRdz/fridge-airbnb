@@ -8,10 +8,6 @@
 //   top: 0;
 // }
 
-.hola{
- float: right;
-}
-
 .carousel-control-prev-icon{
   position: relative;
   left: 30px;
@@ -27,11 +23,39 @@
  margin-top: 40px;
  margin-bottom: 0px;
 }
-.price_night{
-  margin-bottom: 0px;
 
-}
 .d-block {
   object-fit: cover;
   height: 550px;
+}
+input[type=submit]{
+  width: 25em;
+  height: 2em;
+  border-radius: 5px;
+  border: none;
+  margin-right: 6px;
+}
+.form_booking{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.price{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1px;
+}
+.fee{
+  margin-top: 1px;
+  margin-bottom: 1px;
+  display: flex;
+  justify-content: space-between;
+}
+.total{
+  margin-top: 1px;
+  display: flex;
+  justify-content: space-between;
+}
+.border_booking{
+  
 }
