@@ -1,15 +1,15 @@
-.flat-content{
-  height:350px;
-  background-color:white;
-}
-.card-product{
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
-  padding-left: 0%;
-  padding-right: 0%;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 3%;
-}
+// .flat-content{
+//   height:350px;
+//   background-color:white;
+// }
+// .card-product{
+//   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+//   padding-left: 0%;
+//   padding-right: 0%;
+//   margin-left: 10px;
+//   margin-right: 10px;
+//   margin-bottom: 3%;
+// }
 
 .flat-card-actions{
   margin: 10px;
@@ -19,6 +19,35 @@
   }
 }
 
-.border-bottom{
-  border-bottom: 1px;
+// .border-bottom{
+//   border-bottom: 1px;
+// }
+
+.two-items-per-row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.two-items-per-row{
+  padding:50px;
+}
+.actual-card{
+  border-radius:1px;
+}
+
+ .actual-card{
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.actual-pic, .actual-card{
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.cancel-index-booking{
+  color:$p-gray;
+}
+.color-title{
+  color:$naval;
 }

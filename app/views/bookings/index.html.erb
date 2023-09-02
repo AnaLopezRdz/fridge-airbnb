@@ -1,37 +1,34 @@
-<div class="container w-100 my-4">
-  <h1> You have visited: (<%= @bookings.length %>)</h1>
-  <div class="d-flex row my-4   justify-content-around">
+<div class="container  my-4">
+  <h1 class="color-title"> You have visited: (<%= @bookings.length %>)</h1>
+  <div class="two-items-per-row my-4">
     <% @bookings.each do |booking| %>
-      <div class="col-md-3 card-product">
-        <div class="flat-content ">
-          <div class="width: 100%;">
-              <%# <img style="object-fit:cover; width:100%; height: 200px; "src="<%= flat.picture_url %>
-              <%# " alt="bonito"> %>
-            <div>
-              <%= cl_image_tag booking.office.photos.first.key, class:"d-block rounded", alt:"Poster", crop: :fill, style:" width: 100%; height: 200px;"  %>
-            </div>
-              <h1 class="my-1 mx-2"><%= booking.office.name%></h1>
-              <p class="mx-2"><%= booking.office.address%></p>
-            </div >
-
-            <div class="border-bottom mx-2">
-              <p> From: <%=booking.start_date %></p>
-              <p>To: <%= booking.end_date%></p>
-            </div>
+      <div class="mb-3 actual-card" style="max-width: 540px; ">
+        <div class="row g-0 ">
+          <div class="col-md-4">
+            <%# <img src="..." class="img-fluid rounded-start" alt="..."> %>
+            <%= cl_image_tag booking.office.photos.first.key, class:"d-block actual-pic ", alt:"Poster", crop: :fill, style:" width: 100%; height: 200px;"  %>
           </div>
-          <div class="flat-card-actions">
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title mx-2 my-3 color-title"><%= booking.office.name.capitalize%></h5>
+              <p class="card-text text-truncate mx-2"><%= booking.office.address%></p>
+            </div>
+             <div class="border-bottom  my-2 mx-2">
+              <p> From: <%=booking.start_date %> <br>
+              To: <%= booking.end_date%></p>
+            </div>
+                  <div class="flat-card-actions mx-2">
             <%= link_to "More info...", booking_path(booking) %>
-
-            <% if booking.start_date<Date.today+5 %>
-
+            <% if booking.start_date>Date.today+5 %>
             <%= link_to "cancel",
               booking_path(booking),
               data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
-              class: "ms-3 text-danger"
+              class: "ms-3 cancel-index-booking"
             %>
             <% end %>
         </div>
-          <%# <hr> %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
