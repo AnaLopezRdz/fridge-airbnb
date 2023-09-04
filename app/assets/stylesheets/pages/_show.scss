@@ -18,8 +18,10 @@
 }
 .title{
  display: flex;
- justify-content: center;
- align-items: center;
+ justify-content:space-between;
+//  align-items: center;
+ float: left;
+ margin-left: 114px;
  margin-top: 40px;
  margin-bottom: 0px;
 }
@@ -30,15 +32,17 @@
 }
 input[type=submit]{
   width: 25em;
-  height: 2em;
+  height: 3em;
   border-radius: 5px;
   border: none;
   margin-right: 6px;
+  background-color: #ff8b3d;
+  color:#fffaf1;
 }
 .form_booking{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 .price{
   display: flex;
@@ -57,5 +61,28 @@ input[type=submit]{
   justify-content: space-between;
 }
 .border_booking{
-  
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  margin-top: -250px;
+  margin-left: -21px;
+  margin-right: 40px;
+  // height: 100vh;
+  // position: sticky;
+  // top: 0;
+}
+
+h5{
+justify-content: flex-end;
+}
+
+.dropdown-delete{
+  border-radius: 10px;
+  // margin-right: 115px;
+  // margin-top: 74px;
+}
+.adress_description{
+  margin-top: 4px;
+  margin-left: 24px;
 }

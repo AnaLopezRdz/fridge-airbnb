@@ -1,6 +1,38 @@
 <div class="justify-content-center">
-  <div class="title">
-    <h1><%= @office.name.capitalize %></h1>
+  <div class="d-flex justify-content-between">
+    <div class="mx-15 title">
+      <h1><%= @office.name.capitalize %></h1>
+    </div>
+    <div class=" dropdown-delete" style=" margin-right: -27cm; margin-top: 74px;">
+      <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        ...
+      </button>
+      <ul class="dropdown-menu">
+        <!-- Dropdown menu links -->
+          <li><% if policy(@office).edit? %>
+            <%= link_to edit_office_path(@office) do %>
+            Edit
+            <% end %>
+          <% end %></li>
+          <li><% if policy(@office).destroy? %>
+            <%= link_to offices_path,
+                        method: :delete,
+                        data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                        class: 'delete-link' do %>
+                    Destroy
+                    <% end %>
+          <% end %></li>
+      </ul>
+    </div>
+    <div class="dropdown-share" style=" margin-right: 115px; margin-top: 74px;">
+      <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Share
+      </button>
+      <ul class="dropdown-menu">
+          <li><a target="_blank" href="https://github.com/AnaLopezRdz"><i class="fab fa-github"></i></a></li>
+          <li><a target="_blank" href="https://www.instagram.com/mnsnina/"><i class="fab fa-instagram"></i></a></li>
+      </ul>
+    </div>
   </div>
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="my-4 container">
@@ -26,11 +58,12 @@
 
   <div class="mx-5 form_booking">
     <div class="col-7 mx-4">
-      <div class="container">
+      <div class="adress_description">
         <div class="name-address">
           <div class="d-flex justify-content-between">
               <div class="mx-4">
                   <h6 class="flat-show-address"><%= @office.address %></h6>
+
               </div>
               <div class="my-10">
                 <% if current_user.photo.attached? %>
@@ -43,59 +76,64 @@
           </div>
         </div>
         <hr>
-        <br>
-         <%= render "shared/lables" %>
+        <%= render "shared/lables" %>
         <hr>
         <br>
+        <div>
+        <h4>Description of the location:</h4>
+        <p><%= @office.description %></p>
+        </div>
+        <hr>
+        <br>
+        <div class="reviews">
+        <h4>Reviews:</h4>
+        <p>"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</p>
+        </div>
+        <hr>
       </div>
     </div>
     <div class="col-4 mx-4">
       <div class="reviews_stars">
         <div class="d-md-flex justify-content-md-end">
-          <%# <p>= @reviews.stars · (= @reviews.comment.length)</p> %>
         </div>
       </div>
       <div class="border_booking">
-      <div class="mx-auto  d-md-flex justify-content-md-center">
-        <h5>Book this place:</h5>
-      </div>
-      <div class="mx-auto  d-md-flex justify-content-md-center">
-        <p>Available dates: <span id="startDate1"><%= @office.start_date %></span> |<span id="endDate1"><%= @office.end_date %></p>
-      </div>
-      <div class="d-md-flex justify-content-md-end">
-        <h6>£<%= @office.price %> per night</h6>
-      </div>
-      <div class="d-grip gap-1">
-        <%= simple_form_for [@office, @booking], data: { controller: 'flatpickr' } do |f| %>
-          <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
-          <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" }, id: 'end_date' } %>
-          <% total_days = (@office.end_date - @office.start_date).to_i  %>
-          <% total = (@office.price * total_days) %>
-          <div class="price">
-            <p>£<%= @office.price %> X <%= total_days %>days</p> <p>£ <%= total %> </p>
-          </div>
-          <div class="fee">
-            <p>Cleaning fee:</p><p>£ 80</p>
-          </div>
-          <hr>
-          <div class="total">
-            <p>Total:</p><p>£ <%= total + 80 %></p>
-          </div>
-
-          <%= f.submit 'Schedule your booking'%>
-        <% end %>
-      </div>
-      <%# <div class="icons">
-        <p>Let's share: </p>
-        <i class="fa-brands fa-facebook-square me-2 fa-2x"></i>
-        <i class="fa-brands fa-twitter-square me-2 fa-2x"></i>
-        <i class="fa-brands fa-pinterest-square me-2 fa-2x"></i>
-      </div> %>
+        <div class=" mx-auto  d-md-flex justify-content-md-center">
+          <h5>Book this place:</h5>
+        </div>
+        <div class="mx-auto  d-md-flex justify-content-md-center">
+          <p>Available dates: <span id="startDate1"><%= @office.start_date %></span> |<span id="endDate1"><%= @office.end_date %></p>
+        </div>
+        <div class="d-md-flex justify-content-md-end">
+          <h6>£<%= @office.price %> per night</h6>
+        </div>
+        <div class="d-grip gap-1">
+          <%= simple_form_for [@office, @booking], data: { controller: 'flatpickr' } do |f| %>
+            <%= f.input :start_date, as: :string, input_html: { data: { flatpickr_target: "startDate" } } %>
+            <%= f.input :end_date, as: :string, input_html: { data: { flatpickr_target: "endDate" }, id: 'end_date' } %>
+            <div class="price">
+              <p>£<span id="office-price"><%= @office.price %></span> X <span id="total-days">0</span> days</p>
+              <p>£<span id="total-price-dates">0.00</span></p>
+            </div>
+            <div class="fee">
+              <p>Cleaning fee:</p><p>£<span id="cleaning-fee">80.00</span></p>
+            </div>
+            <hr>
+            <div class="total">
+              <p>Total:</p><p>£ <span id="total">80.00</span></p>
+            </div>
+            <%= f.submit 'Schedule your booking'%>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
   <br>
   <div class="container">
+    <div class="address">
+      <h6>Where you will be:</h6>
+      <p><%= @office.address %></p>
+    </div>
     <div class="map">
       <div style="my-4 width: 100%; height: 400px;"
         data-controller="map"
@@ -103,20 +141,5 @@
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
       </div>
     </div>
-  </div>
-  <div class="d-grip gap-2 d-md-flex justify-content-md-end">
-    <% if policy(@office).edit? %>
-      <%= link_to edit_office_path(@office) do %>
-      <i class="fa-solid fa-pencil" style="color: #463730;"></i>
-      <% end %>
-    <% end %>
-    <% if policy(@office).destroy? %>
-      <%= link_to offices_path,
-                  method: :delete,
-                  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                  class: 'delete-link' do %>
-              <i class="fa-regular fa-trash-can" style="color: #E57915;"></i>
-              <% end %>
-    <% end %>
   </div>
 </div>
