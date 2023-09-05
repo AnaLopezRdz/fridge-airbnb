@@ -17,6 +17,7 @@ class OfficesController < ApplicationController
       lat: @office.latitude,
       lng: @office.longitude
     }]
+    @reviews = @office.reviews
   end
 
   def new

@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   before_action :set_review, only: [:destroy]
 
+  
 
   def new
     @review = Review.new
