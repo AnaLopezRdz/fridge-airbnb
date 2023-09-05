@@ -17,6 +17,12 @@ class BookingsController < ApplicationController
     }]
   end
 
+  def send_confirmation_email(booking)
+    user = current_user
+
+    BookingConfirmationMailer.confirmation_email(user, booking).deliver_now
+  end
+
   def new
     @booking = Booking.new
 
@@ -31,6 +37,8 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
+      send_confirmation_email(@booking)
+
       redirect_to booking_path(@booking)
     else
       render "offices/show", status: :unprocessable_entity
