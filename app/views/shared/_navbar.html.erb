@@ -4,10 +4,24 @@
       <%= image_tag "https://res.cloudinary.com/dclozlnfy/image/upload/v1693387624/WhatsApp_Image_2023-08-30_at_11.26.28_AM_ujfnfc.jpg", class: "office_logo" %>
     <% end %>
 
-    <form class="d-flex">
+    <%# <form class="d-flex">
         <input class="form-control me-2" type="search" placeholder="sunny, modern..." aria-label="Search">
         <button class="btn btn-outline-" type="submit"><img src="https://cdn-icons-png.flaticon.com/128/2989/2989907.png" alt=""></button>
-      </form>
+      </form> %>
+
+<div class="row justify-content-center">
+  <div class="col-sm-8 my-3">
+    <%= form_with url: offices_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Type a keyword"
+        %>
+      <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
