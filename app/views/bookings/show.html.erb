@@ -1,5 +1,101 @@
-<div class="d-flex">
-  <div class="details"></div>
-  <div class="map"></div>
+<div class="d-flex w-100">
+  <div class="details w-50 " style="margin-top: 5px; height: 100vh;">
+    <div class="mini-carru" style="position: relative;">
+      <div style=" width: 100%; height: 300px; object-fit:cover; background-position:center; background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @booking.office.photos.first.key, crop: :fill %>');  " class= "rounded opacity-photo">   </div>
+      <%#= cl_image_tag @booking.office.photos.first.key, class: "d-block rounded opacity-photo", alt: "Poster", crop: :fill, style: "width: 100%; height: 300px;" %>
+      <div class="text-overlay" style="position: absolute; top: 10px; left: 10px;  padding: 10px;">
+        <h1 id="h1onphoto"><%= @booking.office.name.capitalize %></h1>
+      </div>
+    </div>
+    <div class=" my-3 d-flex justify-content-center  w-100 border-bottom mx-6">
+      <div class="text-center p-2  w-50 border-end">
+        <h6>Check-in</h6>
+        <p><%= @booking.start_date %></p>
+      </div>
+      <div class="text-center p-2 w-50 ">
+        <h6>Checkout</h6>
+        <p><%= @booking.end_date %></p>
+      </div>
+    </div>
+    <div class="scroll-container">
 
+
+      <div class="d-flex mx-2 border-bottom justify-content-between">
+        <div>
+          <h4 class="mx-2">Reservation details:</h4>
+          <div class=" ">
+            <h5>Hosted by:</h5>
+            <h6><%= @booking.office.user.name %></h6>
+          </div>
+        </div>
+        <div class="mx-5 ">
+          <%#= cl_image_tag @booking.user.photo.key %>
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key, class: "avatarito dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+            <% else %>
+              <%= image_tag "https://res.cloudinary.com/dclozlnfy/image/upload/v1693242201/360_F_187104027_8i2JbFDBB5jB7R65Ce464yRs4gfNbR3Z_cpcsbf.jpg",
+            class: "avatarito dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% end %>
+        </div>
+      </div>
+
+
+      <div class="mx-2 my-2 border-bottom">
+        <h5>Adress:</h5>
+        <p><%= @booking.office.address %></p>
+      </div>
+
+
+      <div class="mx-2 my-2 border-bottom">
+        <h5>Cancelation Policy</h5>
+        <p>Cancel 5 day before your reservation. Is not possible to cancel 4 days or later before your reservations starts</p>
+      </div>
+      <div class="mx-2">
+        <h5>Rules and instructions:</h5>
+        <p>
+          1. In general
+          The standard terms and conditions are an integral part of the Agreement. Definitions in the Agreement also apply to the Standard Terms.
+
+          2. Use
+          The right to use the Premises only applies to the registered Customer, and the Customer may not leave the use to others.
+
+          The customer is obliged to leave the office space cleared at the end of each working day, as well as at the end of the Agreement period. If the Delivery does not apply to the use of a permanent office or permanent office space, the Customer is also obliged to remove all his assets at the end of each working day.
+
+          The premises may only be used for office activities. Modification of the business on the Premises, including operation of other, related business, is not permitted without the Supplier's written prior consent. The customer is obliged to treat both the Premises and the property in general with due care.
+
+          It is not permitted to hold courses, lectures and similar activities on the premises - without written permission
+
+          All office spaces in the network that are not sold or reserved can be used by all Customers - provided as a service included in the Agreement. Access to available spaces applies regardless of whether the spaces are locked or not. For access arrangements, please contact customer service at kundeservice@evolve.no. However, there may be some restrictions on access based on the product the Customer has purchased.
+
+          ‍
+
+          3. Payment
+          The consideration specified in the Agreement is due for payment in advance on the 1st of each month. The Supplier issues an invoice to the Customer with such content as is required in accordance with current regulations, and with information about the Supplier's account number for payment of the Remuneration. Payment is not considered made until the amount has been received on the Supplier's account.
+
+          The remuneration can - in addition to changes in the price list - be adjusted every 1 January, in accordance with any changes in Statistics Norway's consumer price index, or, if this is abolished, another corresponding public index. However, the Remuneration shall not be adjustable under the Remuneration agreed at the time of the contract. The original contract index is the index for the month of June in the year the agreement was entered into. Adjustment is based on the development from the original contract index to the last known index at the time of adjustment.
+
+          The current price list is visible at www.evolve.no. The price list is subject to change without notice.
+
+          In the event of late payment of the Remuneration, interest on arrears shall be paid in accordance with Act No. 100 of 17 December 1976 or Act replacing it. The supplier has the right to demand a fee for reminders.
+
+          In the event of non-payment, the Supplier may terminate the Customer's access - after the reminder and debt collection notice have been sent out.
+
+          The customer decides that a compulsory deviation can be demanded if the Remuneration is not paid, cf. the Enforcement Act § 13-2 third paragraph (a). The customer decides that a compulsory deviation can be demanded when the Agreement period has expired, cf. the Enforcement Act § 13-2 third paragraph (b).
+
+
+
+
+        </p>
+      </div>
+     </div>
+    </div>
+
+
+  <div class="map w-50" style="margin-top: 5px;">
+    <div style="width: 100%; height: 100vh;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+    </div>
+  </div>
 </div>

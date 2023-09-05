@@ -19,7 +19,6 @@ class BookingPolicy < ApplicationPolicy
     return true
   end
 
-
   def new?
     return create?
   end
@@ -36,7 +35,8 @@ class BookingPolicy < ApplicationPolicy
     return record.user == user
   end
 
-  def destroy
-    return record.user == user
+  def destroy?
+    # return true
+     return record.user == user
   end
 end

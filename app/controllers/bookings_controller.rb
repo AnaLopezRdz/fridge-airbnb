@@ -11,10 +11,10 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
-    # @markers = [{
-    #   lat: @office.latitude,
-    #   lng: @office.longitude
-    # }]
+    @markers = [{
+      lat: @booking.office.latitude,
+      lng: @booking.office.longitude
+    }]
   end
 
   def new
@@ -65,6 +65,6 @@ class BookingsController < ApplicationController
     @office = Office.find(params[:office_id])
   end
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :number_of_days, :price)
   end
 end
