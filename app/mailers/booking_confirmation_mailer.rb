@@ -1,5 +1,5 @@
 class BookingConfirmationMailer < ApplicationMailer
-  default from: "office.rent@default.com"
+  default from: "officewhereyouare@gmail.com"
 
   def confirmation_email(user, booking)
     @user = user
