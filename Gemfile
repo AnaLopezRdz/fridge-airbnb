@@ -33,7 +33,7 @@ gem "devise"
 gem "pundit"
 gem "geocoder"
 gem 'rails_12factor', group: :production
-gem 'mailcatcher'
+# gem 'mailcatcher'
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 gem "cloudinary"
