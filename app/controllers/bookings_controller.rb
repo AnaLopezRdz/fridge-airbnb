@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
   def show
     @booking = Booking.find(params[:id])
     authorize @booking
+    # @review = Review.new
     @markers = [{
       lat: @booking.office.latitude,
       lng: @booking.office.longitude
@@ -20,7 +21,6 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
-
     authorize @booking
   end
 
