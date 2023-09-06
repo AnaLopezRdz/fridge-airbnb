@@ -102,7 +102,6 @@ GEM
       rest-client (>= 2.0.0)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
-    daemons (1.4.1)
     date (3.3.3)
     debug (1.8.0)
       irb (>= 1.5.0)
@@ -120,25 +119,13 @@ GEM
       dotenv (= 2.8.1)
       railties (>= 3.2)
     erubi (1.12.0)
-    eventmachine (1.2.7)
     execjs (2.8.1)
-    faraday (2.7.10)
-      faraday-net_http (>= 2.0, < 3.1)
-      ruby2_keywords (>= 0.0.4)
-    faraday-net_http (3.0.2)
     ffi (1.15.5)
     font-awesome-sass (6.4.2)
       sassc (~> 2.0)
     geocoder (1.8.2)
-    gibbon (3.5.0)
-      faraday (>= 1.0)
-      multi_json (>= 1.11.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
-    haml (6.1.2)
-      temple (>= 0.8.2)
-      thor
-      tilt
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
@@ -152,7 +139,6 @@ GEM
       activesupport (>= 5.0.0)
     jsbundling-rails (1.1.2)
       railties (>= 6.0.0)
-    json (2.6.3)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -161,16 +147,6 @@ GEM
       net-imap
       net-pop
       net-smtp
-    mailcatcher (0.2.4)
-      eventmachine
-      haml
-      i18n
-      json
-      mail
-      sinatra
-      skinny (>= 0.1.2)
-      sqlite3-ruby
-      thin
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
@@ -180,9 +156,6 @@ GEM
     mini_mime (1.1.5)
     minitest (5.19.0)
     msgpack (1.7.2)
-    multi_json (1.15.0)
-    mustermann (3.0.0)
-      ruby2_keywords (~> 0.0.1)
     net-imap (0.3.7)
       date
       net-protocol
@@ -211,8 +184,6 @@ GEM
       activesupport (>= 3.0.0)
     racc (1.7.1)
     rack (2.2.8)
-    rack-protection (3.1.0)
-      rack (~> 2.2, >= 2.2.4)
     rack-test (2.1.0)
       rack (>= 1.3)
     rails (7.0.7)
@@ -236,11 +207,6 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
-    rails_12factor (0.0.3)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.5)
-    rails_stdout_logging (0.0.5)
     railties (7.0.7)
       actionpack (= 7.0.7)
       activesupport (= 7.0.7)
@@ -261,7 +227,6 @@ GEM
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
     rexml (3.2.6)
-    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -275,14 +240,6 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sinatra (3.1.0)
-      mustermann (~> 3.0)
-      rack (~> 2.2, >= 2.2.4)
-      rack-protection (= 3.1.0)
-      tilt (~> 2.0)
-    skinny (0.2.2)
-      eventmachine (~> 1.0)
-      thin
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -290,17 +247,8 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.4-arm64-darwin)
-    sqlite3 (1.6.4-x86_64-linux)
-    sqlite3-ruby (1.3.3)
-      sqlite3 (>= 1.3.3)
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
-    temple (0.10.2)
-    thin (1.8.2)
-      daemons (~> 1.0, >= 1.0.9)
-      eventmachine (~> 1.0, >= 1.0.4)
-      rack (>= 1, < 3)
     thor (1.2.2)
     tilt (2.2.0)
     timeout (0.4.0)
@@ -348,16 +296,13 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass (~> 6.1)
   geocoder
-  gibbon
   jbuilder
   jsbundling-rails
-  mailcatcher
   pg (~> 1.1)
   pg_search
   puma (~> 5.0)
   pundit
   rails (~> 7.0.7)
-  rails_12factor
   sassc-rails
   selenium-webdriver
   simple_form!
