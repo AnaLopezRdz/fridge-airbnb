@@ -12,7 +12,7 @@
           <ul class="dropdown-menu">
             <!-- Dropdown menu links -->
               <li><% if policy(@office).edit? %>
-                <%= link_to edit_office_path(@office) do %>
+               <div class="drop text-decoration-none"></div> <%= link_to edit_office_path(@office) do %>
                 Edit
                 <% end %>
               <% end %></li>
@@ -20,7 +20,7 @@
                 <%= link_to offices_path,
                             method: :delete,
                             data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
-                            class: 'delete-link' do %>
+                            class: 'delete-link drop text-decoration-none' do %>
                         Destroy
                         <% end %>
               <% end %></li>
@@ -32,8 +32,8 @@
           Share
         </button>
         <ul class="dropdown-menu">
-            <li><a target="_blank" href="https://github.com/AnaLopezRdz"> GitHub</a></li>
-            <li><a target="_blank" href="https://www.instagram.com/mnsnina/"> Instagram</a></li>
+            <li><a target="_blank" class="drop text-decoration-none" href="https://github.com/AnaLopezRdz"> GitHub</a></li>
+            <li><a target="_blank" class="drop text-decoration-none" href="https://www.instagram.com/mnsnina/"> Instagram</a></li>
         </ul>
       </div>
     </div>
