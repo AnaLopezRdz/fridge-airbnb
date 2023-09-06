@@ -9,6 +9,7 @@ class OfficesController < ApplicationController
       @offices = policy_scope(Office.search_by_name_and_description(params[:query]))
     else
       @offices = policy_scope(Office.all)
+
     end
   end
 
@@ -19,6 +20,7 @@ class OfficesController < ApplicationController
       lat: @office.latitude,
       lng: @office.longitude
     }]
+    @reviews = @office.reviews
   end
 
   def new

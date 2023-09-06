@@ -18,6 +18,12 @@ class BookingsController < ApplicationController
     }]
   end
 
+  def send_confirmation_email(booking)
+    user = current_user
+
+    BookingConfirmationMailer.confirmation_email(user, booking).deliver_now
+  end
+
   def new
     @booking = Booking.new
     authorize @booking
@@ -31,6 +37,8 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
+      send_confirmation_email(@booking)
+
       redirect_to booking_path(@booking)
     else
       render "offices/show", status: :unprocessable_entity
@@ -57,13 +65,16 @@ class BookingsController < ApplicationController
   end
 
   private
+
   def set_booking
     @booking = Booking.find(params[:id])
     authorize @booking
   end
+
   def set_office
     @office = Office.find(params[:office_id])
   end
+
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :number_of_days, :price)
   end
