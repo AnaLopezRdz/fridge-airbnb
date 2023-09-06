@@ -14,6 +14,7 @@
 .flat-card-actions{
   margin: 10px;
   height:30px;
+  align-items: center;
   a{
     text-decoration: none;
   }
@@ -50,4 +51,19 @@
 }
 .color-title{
   color:$naval;
+}
+.orange-botton{
+  background-color: $oranje;
+  // margin-bottom: 20px;
+}
+.orange-botton:hover{
+  color:white;
+  background-color: $naval;
+}
+// .cancel-index-booking{
+//   text-align: center;
+//   align-items: center;
+// }
+.border-bottom{
+  padding-bottom: 0px;
 }

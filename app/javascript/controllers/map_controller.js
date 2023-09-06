@@ -8,13 +8,17 @@ export default class extends Controller {
 
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
-
+      const myBookingsMap = document.getElementById("my_bookings_map");//iness
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/mapbox/streets-v10",
+      zoom: 9
     })
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
+    if (myBookingsMap) {//iness
+      this.map.scrollZoom.disable()//iness
+    }
   }
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {

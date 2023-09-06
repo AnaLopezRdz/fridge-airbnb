@@ -1,14 +1,27 @@
 <div class="navbar-2">
-  <i class="fa-solid fa-wifi"data-bs-toggle="tooltip" data-bs-placement="bottom" title="With WiFi"></i>
+  <%= link_to controller: "offices", query:"wifi", class: "text-decoration-none", 'data-bs-toggle' => 'tooltip' , 'data-bs-custom-class' => 'custom-tooltip',  'data-bs-placement' => 'bottom', 'title' => 'With WiFi'  do %>
+    <i class="fa-solid fa-wifi" data-bs-toggle="tooltip" data-bs-placement="bottom" title="With WiFI"></i>
+  <% end %>
   <%# <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">
     Tooltip on right
   </button> %>
-  <i class="fa-solid fa-car size-tooltip" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Parking"></i>
+   <%= link_to controller: "offices", query:"parking", class: "text-decoration-none"  do %>
+    <i class="fa-solid fa-car" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Parking"></i>
+  <% end %>
   <%# <i class="fa-solid fa-car" title="Car"></i> %>
   <%# <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">
   Tooltip on bottom
   </button> %>
-  <i class="fa-regular fa-building" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Top Roof"></i>
-  <i class="fa-brands fa-centercode" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Close to Center"></i>
-  <i class="fa-solid fa-mountain-sun" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Best Views"></i>
+   <%= link_to controller: "offices", query:"hight", class: "text-decoration-none"  do %>
+    <i class="fa-regular fa-building" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Top Roof"></i>
+  <% end %>
+   <%= link_to controller: "offices", query:"center", class: "text-decoration-none"  do %>
+    <i class="fa-brands fa-centercode" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Close to Center"></i>
+  <% end %>
+   <%= link_to controller: "offices", query:"view", class: "text-decoration-none"  do %>
+    <i class="fa-solid fa-mountain-sun" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Best Views"></i>
+  <% end %>
 </div>
+<script>
+
+</script>
