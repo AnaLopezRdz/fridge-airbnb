@@ -3,8 +3,8 @@ class BookingConfirmationMailer < ApplicationMailer
 
   def confirmation_email(user, booking)
     @user = user
-    @office = booking.office
     @booking = booking
+    @office = @booking.office
     mail(to: @user.email, subject: "Your booking confirmation")
   end
 end
