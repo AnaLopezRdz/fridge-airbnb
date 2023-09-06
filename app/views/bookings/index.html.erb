@@ -1,5 +1,5 @@
 <div class="container  my-4">
-  <h1 class="color-title"> You have visited: (<%= @bookings.length %>)</h1>
+  <h1 class="color-title"> You have visited (<%= @bookings.length %>) offices:</h1>
   <div class="two-items-per-row my-4">
     <% @bookings.each do |booking| %>
       <div class="mb-3 actual-card" style="max-width: 540px; ">
@@ -13,18 +13,23 @@
               <h5 class="card-title mx-2 my-3 color-title"><%= booking.office.name.capitalize%></h5>
               <p class="card-text text-truncate mx-2"><%= booking.office.address%></p>
             </div>
-             <div class="border-bottom  my-2 mx-2">
+             <div class="border-bottom  my-1 mx-2">
               <p> From: <%=booking.start_date %> <br>
               To: <%= booking.end_date%></p>
             </div>
-                  <div class="flat-card-actions mx-2">
-            <%= link_to "More info...", booking_path(booking) %>
+                  <div class="flat-card-actions mx-2 d-flex">
+            <%#= link_to "More info...", booking_path(booking) %>
+            <%= button_to "See More", booking_path(booking), method: :get, class: "btn orange-botton" %>
+
             <% if booking.start_date>Date.today+5 %>
             <%= link_to "cancel",
               booking_path(booking),
               data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
               class: "ms-3 cancel-index-booking"
             %>
+            <%# else %>
+            <%#= link_to "Write a review", new_office_path, class: "nav-link" %>
+
             <% end %>
         </div>
           </div>

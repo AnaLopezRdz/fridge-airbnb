@@ -4,7 +4,12 @@ class OfficesController < ApplicationController
 
   def index
     #  @offices = policy_scope(Office)# can delete the word all because you're calling twice (office_police + here)
-    @offices = policy_scope(Office.all)
+    if params[:query].present?
+      # @offices = Office.search_by_name_and_description(params[:query])
+      @offices = policy_scope(Office.search_by_name_and_description(params[:query]))
+    else
+      @offices = policy_scope(Office.all)
+    end
   end
 
   def show

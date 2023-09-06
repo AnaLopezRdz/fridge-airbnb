@@ -1,15 +1,17 @@
 .footer {
   background:$oranje;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content:center;
   height: 100px;
   padding: 0px 50px;
   color:$naval;
 }
 .footer-links {
   display: flex;
-  align-items: center;
+  & .footer-copyright{
+  align-items: center;}
 }
 .footer-links a {
   color: $pearly;
