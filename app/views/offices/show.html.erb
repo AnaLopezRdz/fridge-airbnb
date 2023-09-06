@@ -114,7 +114,9 @@
           <h5>Book this place:</h5>
         </div>
         <div class="mx-auto  d-md-flex justify-content-md-center">
-          <p>Available dates: <span id="startDate1"><%= @office.start_date %></span> |<span id="endDate1"><%= @office.end_date %></p>
+          <span id="startDate1" style="display: none"><%= @office.start_date %></span>
+          <span id="endDate1" style="display: none"><%= @office.end_date %></span>
+          <p>Available dates: <span><%= @office.start_date.strftime('%d/%m/%Y') %></span> | <span><%= @office.end_date.strftime('%d/%m/%Y') %></p>
         </div>
         <div class="d-md-flex justify-content-md-end">
           <h6>£<%= @office.price %> per night</h6>
