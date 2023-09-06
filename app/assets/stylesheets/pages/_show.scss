@@ -80,7 +80,14 @@ justify-content: flex-end;
 }
 .dropdown{
   display: flex;
+  background-color: white;
 }
+.drop{
+ color: #0b1d31;
+ background-color: white;
+
+}
+
 .dropdown-delete{
   border-radius: 10px;
   display: inline-block;
@@ -89,15 +96,18 @@ justify-content: flex-end;
   margin-left:10px;
   margin-right: -968;
   margin-top: 74px;
+  background-color: white;
 }
 .dropdown-share{
   margin-right: 115px;
   margin-top: 74px;
   display: inline-block;
+  background-color: white;
 }
 .dropdown-menu{
   text-decoration: none;
   color: #002B5B;
+  background-color: white;
 }
 .adress_description{
   margin-top: 4px;
