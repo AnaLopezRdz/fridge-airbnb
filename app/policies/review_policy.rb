@@ -4,17 +4,17 @@ class ReviewPolicy < ApplicationPolicy
     def resolve
       scope.where(user: user)
     end
-  end
 
-  def new?
-    return create?
-  end
+    def new?
+      return create?
+    end
 
-  def create?
-    return true
-  end
+    def create?
+      return true
+    end
 
-  def destroy
-    return record.user == user
+    def destroy
+      return record.user == user
+    end
   end
 end
