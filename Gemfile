@@ -36,6 +36,9 @@ gem "geocoder"
 # gem "kredis"
 gem "cloudinary"
 
+
+
+
 gem "pg_search"
 
 gem "bootstrap", '~> 5.3.1'
