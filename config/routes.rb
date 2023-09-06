@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :offices do
     resources :bookings, only: [ :new, :create ]
-    resources :reviews, only: [:create]
+    resources :reviews, only: [:new, :create]
   end
   resources :bookings, only: [:show, :edit, :update, :destroy, :index]
   resources :reviews, only: :destroy
