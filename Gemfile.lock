@@ -120,19 +120,12 @@ GEM
       dotenv (= 2.8.1)
       railties (>= 3.2)
     erubi (1.12.0)
-    eventmachine (1.2.7)
+    eventmachine (1.0.9.1)
     execjs (2.8.1)
-    faraday (2.7.10)
-      faraday-net_http (>= 2.0, < 3.1)
-      ruby2_keywords (>= 0.0.4)
-    faraday-net_http (3.0.2)
     ffi (1.15.5)
     font-awesome-sass (6.4.2)
       sassc (~> 2.0)
     geocoder (1.8.2)
-    gibbon (3.5.0)
-      faraday (>= 1.0)
-      multi_json (>= 1.11.0)
     globalid (1.1.0)
       activesupport (>= 5.0)
     haml (6.1.2)
@@ -180,7 +173,6 @@ GEM
     mini_mime (1.1.5)
     minitest (5.19.0)
     msgpack (1.7.2)
-    multi_json (1.15.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     net-imap (0.3.7)
@@ -236,11 +228,6 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
-    rails_12factor (0.0.3)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.5)
-    rails_stdout_logging (0.0.5)
     railties (7.0.7)
       actionpack (= 7.0.7)
       activesupport (= 7.0.7)
@@ -280,9 +267,9 @@ GEM
       rack (~> 2.2, >= 2.2.4)
       rack-protection (= 3.1.0)
       tilt (~> 2.0)
-    skinny (0.2.2)
-      eventmachine (~> 1.0)
-      thin
+    skinny (0.2.4)
+      eventmachine (~> 1.0.0)
+      thin (>= 1.5, < 1.7)
     sprockets (4.2.0)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -297,10 +284,10 @@ GEM
     stimulus-rails (1.2.2)
       railties (>= 6.0.0)
     temple (0.10.2)
-    thin (1.8.2)
-      daemons (~> 1.0, >= 1.0.9)
-      eventmachine (~> 1.0, >= 1.0.4)
-      rack (>= 1, < 3)
+    thin (1.6.2)
+      daemons (>= 1.0.9)
+      eventmachine (>= 1.0.0)
+      rack (>= 1.0.0)
     thor (1.2.2)
     tilt (2.2.0)
     timeout (0.4.0)
@@ -348,7 +335,6 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass (~> 6.1)
   geocoder
-  gibbon
   jbuilder
   jsbundling-rails
   mailcatcher
@@ -357,7 +343,6 @@ DEPENDENCIES
   puma (~> 5.0)
   pundit
   rails (~> 7.0.7)
-  rails_12factor
   sassc-rails
   selenium-webdriver
   simple_form!

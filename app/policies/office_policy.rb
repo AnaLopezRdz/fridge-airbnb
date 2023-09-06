@@ -6,6 +6,7 @@ class OfficePolicy < ApplicationPolicy
       # scope.where(user: user)
     end
   end
+
   def show?
     return true
   end

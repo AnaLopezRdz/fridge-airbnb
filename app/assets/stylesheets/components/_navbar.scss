@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background:white;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  // box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -48,12 +48,24 @@ i:hover{
 .btn-outline- {
 width: 50px;
 background-color: #ff8b3d;
+}
 img {
   width: 25px;
   height: 25px;
 }
-}
+
 .btn-outline-:hover {
   font-weight: bold;
   background-color: #E67E22;
   }
+.dropdown-menu-end{
+  background-color: rgba(255, 255, 255, 0.9);
+
+}
+.dropdown-item{
+  color:$naval;
+
+}
+.dropdown-item:hover{
+  background-color: $oranje;
+}

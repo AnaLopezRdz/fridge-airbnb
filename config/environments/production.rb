@@ -65,13 +65,14 @@ Rails.application.configure do
   # config.action_mailer.perform_caching = false
   # config.action_mailer.delivery_method = :smtp
   # config.action_mailer.smtp_settings = {
-  #   address: 'smtp.gmail.net',
+  #   enable_starttls_auto: true,
+  #   openssl_verify_mode: 'none',
+  #   address: 'smtp.gmail.com',
   #   port: 587,
-  #   domain: 'fridge-airbnb-9eb3e9d0c311.herokuapp.com',
+  #   domain: 'gmail.com',
   #   user_name: 'officewhereyouare@gmail.com',
   #   password: 'olaola1234',
-  #   authentication: :plain,
-  #   enable_starttls_auto: true
+  #   authentication: :plain
   # }
 
   # Ignore bad email addresses and do not raise email delivery errors.
@@ -79,7 +80,7 @@ Rails.application.configure do
   # config.action_mailer.raise_delivery_errors = false
 
 
-  
+
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
