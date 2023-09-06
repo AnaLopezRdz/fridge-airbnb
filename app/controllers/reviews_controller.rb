@@ -3,6 +3,8 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @office = Office.find(params[:id])
+
     authorize @review
   end
 

@@ -37,10 +37,18 @@ Rails.application.configure do
   config.active_storage.service = :cloudinary
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  # config.action_mailer.raise_delivery_errors = false
 
-  config.action_mailer.perform_caching = false
-
+  # config.action_mailer.perform_caching = true
+  # config.action_mailer.perform_deliveries = true
+  # # config.action_mailer.raise_delivery_errors = true
+  # # config.action_mailer.default_url_options = { :host = 'localhost:3000' }
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   address: 'localhost',
+  #   port: 1025 # MailCatcher's default SMTP port
+  # }
+  # config.action_mailer.perform_deliveries = true
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 
