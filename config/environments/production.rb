@@ -65,7 +65,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.sendgrid.net',
+    address: 'smtp.gmail.net',
     port: 587,
     domain: 'fridge-airbnb-9eb3e9d0c311.herokuapp.com',
     user_name: 'officewhereyouare@gmail.com',
