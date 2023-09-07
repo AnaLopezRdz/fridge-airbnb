@@ -49,32 +49,13 @@
       </div>
 
       <div class="mx-2 my-2 border-bottom">
-        <h5>Address:</h5>
+        <h5>Adress:</h5>
         <p><%= @booking.office.address %></p>
       </div>
 
-
-      <%= simple_form_for [@booking, @review] do |f| %>
-        <div class="form-group">
-          <%= f.label :comment %>
-          <%= f.text_area :comment, class: "form-control" %>
-        </div>
-
-        <div class="form-group">
-          <%= f.label :stars %>
-          <%= f.select :stars, (1..5).to_a, class: "form-control" %>
-        </div>
-
-        <div class="form-group">
-          <%= f.submit "Submit Review", class: "btn btn-primary" %>
-        </div>
-      <% end %>
-
-
-
       <div class="mx-2 my-2 border-bottom">
         <h5>Cancelation Policy</h5>
-        <p>Cancel 5 days before your reservation. Is not possible to cancel 4 days or later before your reservations starts</p>
+        <p>Cancel 5 day before your reservation. Is not possible to cancel 4 days or later before your reservations starts</p>
       </div>
       <div class="mx-2">
         <h5>Rules and instructions:</h5>
@@ -112,10 +93,8 @@
       </div>
      </div>
     </div>
-
   <div class="w-50" style="margin-top: 5px;">
     <div id="my_bookings_map" style="width: 100%; height: 130vh;"
-
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
