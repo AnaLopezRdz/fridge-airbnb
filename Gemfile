@@ -32,9 +32,13 @@ gem "jbuilder"
 gem "devise"
 gem "pundit"
 gem "geocoder"
+gem "mailcatcher"
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 gem "cloudinary"
+
+
+
 
 gem "pg_search"
 

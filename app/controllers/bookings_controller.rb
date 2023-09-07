@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
     }]
   end
 
+
   def new
     @booking = Booking.new
     authorize @booking
@@ -57,10 +58,12 @@ class BookingsController < ApplicationController
   end
 
   private
+
   def set_booking
     @booking = Booking.find(params[:id])
     authorize @booking
   end
+
   def set_office
     @office = Office.find(params[:office_id])
   end

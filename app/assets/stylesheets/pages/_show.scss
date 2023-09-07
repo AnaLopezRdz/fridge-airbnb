@@ -41,7 +41,7 @@ input[type=submit]{
 }
 .form_booking{
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 .price{
@@ -65,24 +65,51 @@ input[type=submit]{
   border-radius: 12px;
   padding: 24px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-  margin-top: -250px;
-  margin-left: -21px;
+  // margin-top: -250px;
+  // margin-left: -21px;
   margin-right: 40px;
-  // height: 100vh;
-  // position: sticky;
-  // top: 0;
+  position: sticky;
+  // height: 110vh;
+  // bottom: 400px;
+  top: 0;
+
 }
 
 h5{
 justify-content: flex-end;
 }
-
+.dropdown{
+  display: flex;
+}
 .dropdown-delete{
   border-radius: 10px;
+  display: inline-block;
   // margin-right: 115px;
   // margin-top: 74px;
+  margin-left:10px;
+  margin-right: -968;
+  margin-top: 74px;
+}
+.drop{
+  width: 50px;
+  // background-color: #ff8b3d;
+  color: #002B5B;
+}
+.dropdown-share{
+  margin-right: 115px;
+  margin-top: 74px;
+  display: inline-block;
+}
+.dropdown-menu{
+  text-decoration: none;
+  color: #002B5B;
 }
 .adress_description{
   margin-top: 4px;
   margin-left: 24px;
+}
+.review {
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 10px;
 }
